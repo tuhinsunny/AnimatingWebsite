@@ -26,9 +26,18 @@ gsap.to("#main",{
     scrollTrigger : {
         trigger : "#main",
         scroller : "body",
-        markers : true,
+        // markers : true,
         start : "top -25%",
         end : "top -70%",
         scrub : 2,
     }
 })
+document.querySelectorAll('#scroller h4').forEach(element => {
+    element.addEventListener('mouseover', function() {
+        this.classList.add('hover-effect');
+    });
+    // Example of removing the class on click elsewhere
+    document.addEventListener('click', function() {
+        element.classList.remove('hover-effect');
+    });
+});
